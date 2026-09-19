@@ -1,0 +1,252 @@
+1-D Array Declaration.
+Syntax -
+------------
+ int[] a = new int[5];
+int -> data type
+a -> Array Name.
+new -> Keyword
+[] -> Subscript.
+5 -> Size of Array.
+------------------------------
+using System;
+using System.Text;  // BCL /FCL
+
+namespace DotNetBatch10AM26July
+{
+    class MyFirst
+    {
+        static void Main() // Entry Point of your program.
+        {
+            int[] a = new int[5];  // 1- D Array Declaration.
+            Console.WriteLine("Enter 5 Elements=");
+            for(int i=0;i<5;i++)
+            {
+                a[i] =Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Print 5 Elements=");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+------------
+or
+-------------
+using System;
+using System.Text;  // BCL /FCL
+
+namespace DotNetBatch10AM26July
+{
+    class MyFirst
+    {
+        static void Main() // Entry Point of your program.
+        {
+            int size;
+            Console.Write("Enter the size of Array=");
+            size = Convert.ToInt32(Console.ReadLine());
+            int[] a = new int[size];  // 1- D Array Declaration
+            Console.WriteLine("Enter Elements=");
+            for(int i=0;i<size;i++) // 0<7
+            {
+                a[i] =Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Print  Elements=");
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+    }
+}
+------------------------------------------------
+b) 2-D or Multidimensional.
+---------------------------------------
+>> It consist of rows and column.
+2-D Array Initialization.
+-------------------------------
+Syntax -
+-------------
+int[,] a = new int[3, 4] { { 12, 34, 56, 45 }, { 1, 2, 3, 4 }, { 345, 123, 456,876 }};
+using System;
+using System.Text;  // BCL /FCL
+
+namespace DotNetBatch10AM26July
+{
+    class MyFirst
+    {
+        static void Main() // Entry Point of your program.
+        {
+            int[,] a = new int[3, 4] { { 12, 34, 56, 45 }, { 1, 2, 3, 4 }, { 345, 123, 456,876 }};
+            for(int i=0;i<3;i++) // Row
+            {
+                for(int j=0;j<4;j++) // Column
+                {
+                    Console.Write(a[i,j]+"\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+------------------------------------
+2-D Array Declaration.
+-------------------------------
+Syntax -
+int[,] a = new int[3, 4];
+--------------------------------------------
+using System;
+using System.Text;  // BCL /FCL
+
+namespace DotNetBatch10AM26July
+{
+    class MyFirst
+    {
+        static void Main() // Entry Point of your program.
+        {
+            int[,] a = new int[3, 4];
+            Console.WriteLine("Enter 3X4 Elements=");
+            for (int i = 0; i < 3; i++) // Row
+            {
+                for (int j = 0; j < 4; j++) // Column
+                {
+                   a[i,j]=Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Print 3X4 Elements=");
+            for (int i=0;i<3;i++) // Row
+            {
+                for(int j=0;j<4;j++) // Column
+                {
+                    Console.Write(a[i,j]+"\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+----------------------------------------
+Or
+---------------
+using System;
+using System.Text;  // BCL /FCL
+
+namespace DotNetBatch10AM26July
+{
+    class MyFirst
+    {
+        static void Main() // Entry Point of your program.
+        {
+            int row, col;
+            Console.WriteLine("Enter how many rows and cols you want=>> ");
+            row = Convert.ToInt32(Console.ReadLine());
+            col = Convert.ToInt32(Console.ReadLine());
+            int[,] a = new int[row, col];
+            Console.WriteLine("Enter Elements=");
+            for (int i = 0; i < row; i++) // Row
+            {
+                for (int j = 0; j < col; j++) // Column
+                {
+                   a[i,j]=Convert.ToInt32(Console.ReadLine());
+                }
+            }
+            Console.WriteLine("Print Elements=");
+            for (int i=0;i<row;i++) // Row
+            {
+                for(int j=0;j<col;j++) // Column
+                {
+                    Console.Write(a[i,j]+"\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+------------------------------------------
+c) Jagged Array.
+-----------------------
+>> It is known as 'Array of Arrays.'
+>> In jagged array , we have different sizes of array and if a user want to merge to get a single array then it is known as Jagged Array.
+-----------------------------------------------------------
+Syntax -
+-------------
+int [][]a = new int[5][]; // JAGGED Array
+5 -> Total number of array.
+--------------------------------------------------
+For Example -
+-------------------
+using System;
+using System.Text;  // BCL /FCL
+
+namespace DotNetBatch10AM26July
+{
+    class MyFirst
+    {
+        static void Main() // Entry Point of your program.
+        {
+            int [][]a = new int[5][]; // JAGGED Array
+            a[0]=new int[3]{ 12,34,55};
+            a[1] = new int[5] { 456, 78, 3, 23, 12 };
+            a[2] = new int[2] { 987, 9 };
+            a[3] = new int[1] { 8873 };
+            a[4] = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
+            foreach (int[] arr in a)
+            {
+                foreach(int res in arr)
+                {
+                    Console.Write(res+"\t");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
+-----------------------------------------------
+Assignment of 1-D Array -
+--------------------------------
+1. wap to input array of element and find sum and avg.
+2. wap to input array of element and find odd and even no. and also count total no. of even and odd number in a given array.
+3. wap to input array of elements and reverse them.
+4. wap to input array of elements and find the greatest and smallest element.
+----------------------------------
+Assignment of 2-D Array -
+----------------------------------
+1. wap to input 2-D array of element and find sum and avg.
+2. wap to input 2-D array of element and find odd and even no. and also count total no. of even and odd number in a given array.
+3. wap to input 2-D array of elements and reverse them.
+4. wap to input 2-D array of elements and print transpose elements.
+5. wap to input 2-D array of elements and print diagonal elements.
+6. wap to input two 2-D array of element and print sum, sub and multiplication.
+-------------------------------------------------------
+Assembly in C# -
+--------------------
+>> Assembly usually means a compiled unit of .Net Code - Typically - .dll or .exe file.
+>> An assembly is the compiled and deployed unit of .net Application that contains
+IL and Meta data.
+----------------------------------------------------
+Types of Assembly -
+------------------------
+There are two types of assembly -
+a) Public / Shared Assembly.
+>> Which we can share.
+>> File Extension - .dll  [Dynamic Link Library.]
+b) Private.
+>> which we can't share
+>> File Extension -  .exe  [Executable file.]
+-----------------------------------------------------------
+For Example (Assembly) --  Pending.
+---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
